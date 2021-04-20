@@ -6,6 +6,7 @@ import PrivateRoute from "./components/PrivateRoutes/PrivateRoute";
 import {Provider} from 'react-redux';
 import createStore from './store/createStore';
 import {ToastProvider} from 'react-toast-notifications';
+import Loader from "./components/Loader/Loader";
 
 import "assets/styles/tailwind.css";
 
@@ -29,7 +30,7 @@ export let customHistory = null
 function App() {
   customHistory = useHistory()
   return(
-    <Suspense fallback={<div>Загрузка...</div>}>
+    <Suspense fallback={<Loader />}>
       <Switch>
         {/* add routes with layouts */}
         <Route path="/auth" component={Auth} />

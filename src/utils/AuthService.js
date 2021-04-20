@@ -1,6 +1,6 @@
 import {api} from './API';
 import {addTokenToLocalStorage, getTokenFromLocalStorage, removeTokenFromLocalStorage} from "./LocalStorageService";
-import {isAliveToken} from "./InterceptorService";
+import {checkAuth, isAliveToken} from "./InterceptorService";
 import {customHistory} from "../index";
 
 export const register = (name, email, password, addToast) =>
@@ -54,6 +54,7 @@ export const refreshToken = (refreshToken) =>
   api.post('/auth/refresh-tokens', {refreshToken})
     .then(({data}) => {
       addTokenToLocalStorage(data)
+      return true
     })
     .catch(err => {
       console.error(err)
@@ -71,7 +72,11 @@ export const logout = () => {
     })
 }
 
-export const isAuthUser = () => {
+export const isAuthUser = async () => {
   const tokens = getTokenFromLocalStorage()
-  return !!(tokens && tokens.aToken && isAliveToken(tokens.aToken));
+  if (isAliveToken(tokens.aToken)) {
+    return true
+  } else {
+    return await refreshToken(tokens.rToken)
+  }
 }
