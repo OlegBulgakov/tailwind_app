@@ -152,11 +152,11 @@ export default function Sidebar() {
                       <Link
                         className={
                           "text-xs uppercase py-3 font-bold block " +
-                          (window.location.href.indexOf("/change_password") !== -1
+                          (window.location.href.indexOf("/admin/change_password") !== -1
                             ? "text-lightBlue-500 hover:text-lightBlue-600"
                             : "text-blueGray-700 hover:text-blueGray-500")
                         }
-                        to="/change_password"
+                        to="/admin/change_password"
                       >
                         <i
                           className={
@@ -171,11 +171,11 @@ export default function Sidebar() {
                       <Link
                         className={
                           "text-xs uppercase py-3 font-bold block " +
-                          (window.location.href.indexOf("/cloud_settings") !== -1
+                          (window.location.href.indexOf("/admin/cloud_settings") !== -1
                             ? "text-lightBlue-500 hover:text-lightBlue-600"
                             : "text-blueGray-700 hover:text-blueGray-500")
                         }
-                        to="/cloud_settings"
+                        to="/admin/cloud_settings"
                       >
                         <i
                           className={
@@ -190,11 +190,11 @@ export default function Sidebar() {
                       <Link
                         className={
                           "text-xs uppercase py-3 font-bold block " +
-                          (window.location.href.indexOf("/connectors") !== -1
+                          (window.location.href.indexOf("/admin/connectors") !== -1
                             ? "text-lightBlue-500 hover:text-lightBlue-600"
                             : "text-blueGray-700 hover:text-blueGray-500")
                         }
-                        to="/connectors"
+                        to="/admin/connectors"
                       >
                         <i
                           className={
@@ -233,27 +233,6 @@ export default function Sidebar() {
                 </Link>
               </li>
 
-              <li className="items-center">
-                <Link
-                  className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/maps") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
-                  }
-                  to="/admin/maps"
-                >
-                  <i
-                    className={
-                      "fas fa-map-marked mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/maps") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  />{" "}
-                  Maps
-                </Link>
-              </li>
             </ul>
 
             {/* Divider */}

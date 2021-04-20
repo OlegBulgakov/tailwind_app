@@ -12,9 +12,12 @@ const FooterAdmin = React.lazy(() => import('../components/Footers/FooterAdmin')
 // views
 
 const Dashboard = React.lazy(() => import('../views/admin/Dashboard'));
-const Maps = React.lazy(() => import('../views/admin/Maps'));
 const Settings = React.lazy(() => import('../views/admin/Settings'));
 const Tables = React.lazy(() => import('../views/admin/Tables'));
+
+const ChangePassword = React.lazy(() => import('../components/ChangePassword/ChangePassword'));
+const CloudSettings = React.lazy(() => import('../components/CloudSettings/CloudSettings'));
+const Connectors = React.lazy(() => import('../components/Connectors/Connectors'));
 
 export default function Admin() {
   return (
@@ -27,9 +30,11 @@ export default function Admin() {
         <div className="px-4 md:px-10 mx-auto w-full -m-24">
           <Switch>
             <PrivateRoute path="/admin/dashboard" component={Dashboard} />
-            <PrivateRoute path="/admin/maps" component={Maps} />
             <PrivateRoute path="/admin/settings" component={Settings} />
             <PrivateRoute path="/admin/tables" component={Tables} />
+            <PrivateRoute path="/admin/change_password" component={ChangePassword}/>
+            <PrivateRoute path="/admin/cloud_settings" component={CloudSettings}/>
+            <PrivateRoute path="/admin/connectors" component={Connectors}/>
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           <FooterAdmin />

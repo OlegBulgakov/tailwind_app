@@ -20,10 +20,6 @@ const Landing = React.lazy(() => import('./views/Landing'));
 const Profile = React.lazy(() => import('./views/Profile'));
 const Index = React.lazy(() => import('./views/Index'));
 
-const ChangePassword = React.lazy(() => import('../src/components/ChangePassword/ChangePassword'));
-const CloudSettings = React.lazy(() => import('../src/components/CloudSettings/CloudSettings'));
-const Connectors = React.lazy(() => import('../src/components/Connectors/Connectors'));
-
 // redux store
 
 const store = createStore({});
@@ -41,9 +37,7 @@ function App() {
         {/* add routes without layouts */}
         <PrivateRoute path="/landing" component={Landing}/>
         <PrivateRoute path="/profile" component={Profile}/>
-        <PrivateRoute path="/change_password" component={ChangePassword}/>
-        <PrivateRoute path="/cloud_settings" component={CloudSettings}/>
-        <PrivateRoute path="/connectors" component={Connectors}/>
+
         <Route path="/" exact component={Index} />
         {/* add redirect for first page */}
         <Redirect from="*" to="/" />

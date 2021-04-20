@@ -3,11 +3,15 @@ import React from "react";
 export default function CloudSettings() {
   return (
     <>
-      <div className="flex flex-wrap bg-blueGray-100">
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-          This is cloud settings route
-        </div>
-        <div className="w-full xl:w-4/12 px-4">
+      <div className="flex flex-wrap mt-4">
+        <div className="w-full mb-12 px-4">
+          <div
+            className={
+              "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white p-4 items-center"
+            }
+          >
+            This is cloud settings route
+          </div>
         </div>
       </div>
     </>
